@@ -12,7 +12,15 @@ Alphabetical ordering: `sort` `-o` for output file
 Un-endorsed solution for column printing: `awk '{print $1}'`  
 Endorsed solution for column printing: `cut -f 1 -d "delimiter"`
 
-#### Grep for files
+### Regarding `cut`
+It has a problem with variable whitespace delimiters, so cutting a column except the first one doesn't work, use RegEx & substitution first and then the delimiter can be a comma or something.  
+The simplest way I used to fulfill their requirements is `grep` piped into `cut`  
+
+### Regarding `grep`
+** For words **  
+Be mindful of whether you're using the `-w` flag 😂  
+
+** For files **  
 `grep -l "pattern" /filepath/*` remember the wildcard, otherwise things don't work right  
 Also remember: printing echoing grep results in removing newline characters.  
 
