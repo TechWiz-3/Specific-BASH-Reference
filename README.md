@@ -17,10 +17,10 @@ It has a problem with variable whitespace delimiters, so cutting a column except
 The simplest way I used to fulfill their requirements is `grep` piped into `cut`  
 
 ### Regarding `grep`
-** For words **  
+**For words**  
 Be mindful of whether you're using the `-w` flag 😂  
 
-** For files **  
+**For files**  
 `grep -l "pattern" /filepath/*` remember the wildcard, otherwise things don't work right  
 Also remember: printing echoing grep results in removing newline characters.  
 
