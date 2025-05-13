@@ -3,6 +3,18 @@ Specifically for a subject I'm taking currently
 > Mainly serving as a reminder and reference for the specific commands they want us to be working with
 > This is for my reference, substitute the inputs as necessary for your use-case.  
 
+## `ls`  
+
+`-1` seperate by lines  
+`-a` all, including `.` & `..`  
+
+To get `.` & `..` plus hidden files:  
+`ls  path/ | grep -e "^\." ` - (remember the escape character on the period)   
+
+To get full filepath, use a wildcard:  
+`ls /path/*`  
+
+
 ## Data processing
 
 Regex for one or more whitespaces: `\s\+`  
@@ -24,7 +36,16 @@ Be mindful of whether you're using the `-w` flag 😂
 `grep -l "pattern" /filepath/*` remember the wildcard, otherwise things don't work right  
 Also remember: printing echoing grep results in removing newline characters.  
 
+**Case insensitive**  
+`grep -i`  
+
+**Inverted match**  
+`grep -v`  
+
 ### RegEx reference :)
+
+Note: for actual patterns, they want us to nest `grep` commands and use `grep -v` instad of building a respectable expression.  
+
 * `^`, `$` - carat and the dollar sign match the beginning and end of a line, respectively;
 * \<, \> - the beginning and end of a word;
 * `.` - full-stop matches any character.
